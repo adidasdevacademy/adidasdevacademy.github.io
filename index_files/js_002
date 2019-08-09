@@ -1,0 +1,33 @@
+(function() {
+try {
+    (function(){
+/**/
+
+})();
+//used to sync advertiser without leaking referer to final destination
+(function() {
+    try {
+        var frm = document.createElement('iframe');
+        frm.style.visibility = 'hidden';
+        frm.style.display = 'none';
+        frm.src = "https://pixel.mathtag.com/sync/iframe?mt_uuid=05745c3a-ba62-4200-bc34-0036de861448&no_iframe=1&mt_adid=172909&skipsync=20,10025,10002,10008,10009,10010,10011,10013,10017,10025,10031,10042,10054,10082";
+        frm.setAttribute("id", "mm_sync_back_ground");
+
+        if (document.body)
+            document.body.appendChild(frm);
+        else
+            if (document.head)
+                document.head.appendChild(frm);
+    }
+    catch(ex)
+    {
+        document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=synciframe&what="+encodeURIComponent(ex.message);
+    }
+})();
+
+}
+catch(ex)
+{
+   document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=wrap_js&what="+encodeURIComponent(ex.message);
+}
+})();
