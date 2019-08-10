@@ -11,9 +11,24 @@
 			margin: 0px;
 		}
 	</style>
+	<script type="text/javascript">
+		function LoadImage() {
+			var img = new Image();
+		    x = document.getElementById("hand");
+
+		    img.onload = function() {
+		        x.src = img.src;
+		    };
+
+		    img.src = "hand.png";
+		}
+		window.onload = function() {
+  LoadImage();
+}
+	</script>
 </head>
 <body>
 	<div style="text-align: center;">
-		<img src="hand.png">
+		<img id="hand"/>
 	</div>
 </body>
